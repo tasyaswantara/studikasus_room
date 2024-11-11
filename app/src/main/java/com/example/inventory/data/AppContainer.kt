@@ -32,7 +32,12 @@ class AppDataContainer(private val context: Context) : AppContainer {
     /**
      * Implementation for [ItemsRepository]
      */
+
     override val itemsRepository: ItemsRepository by lazy {
+        /**
+         * Implementasi untuk `ItemsRepository` yang menggunakan `lazy`
+         * agar `OfflineItemsRepository` hanya diinisialisasi ketika diperlukan.
+         */
         OfflineItemsRepository()
     }
 }

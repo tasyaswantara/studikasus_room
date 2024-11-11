@@ -29,6 +29,7 @@ class InventoryApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        // Menyediakan instance AppDataContainer sebagai container untuk aplikasi
         container = AppDataContainer(this)
     }
 }

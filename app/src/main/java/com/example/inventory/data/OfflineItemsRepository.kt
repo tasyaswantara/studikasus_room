@@ -15,5 +15,6 @@
  */
 
 package com.example.inventory.data
-
+// Kelas OfflineItemsRepository mengimplementasikan interface ItemsRepository
+// untuk menangani data barang yang disimpan secara offline.
 class OfflineItemsRepository : ItemsRepository

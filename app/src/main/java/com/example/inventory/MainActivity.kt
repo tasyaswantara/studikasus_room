@@ -30,12 +30,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
+            // Menggunakan tema khusus untuk aplikasi, dalam hal ini InventoryTheme.
             InventoryTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), // Mengatur Surface untuk mengisi seluruh ukuran layar.
+                    color = MaterialTheme.colorScheme.background // Menggunakan warna latar belakang dari tema.
                 ) {
+                    // Menampilkan komponen InventoryApp, yang berisi UI aplikasi.
                     InventoryApp()
                 }
             }

@@ -54,12 +54,12 @@ fun InventoryTopAppBar(
     navigateUp: () -> Unit = {}
 ) {
     CenterAlignedTopAppBar(
-        title = { Text(title) },
+        title = { Text(title) }, // Menampilkan judul pada AppBar
         modifier = modifier,
         scrollBehavior = scrollBehavior,
-        navigationIcon = {
+        navigationIcon = { // Menampilkan ikon navigasi mundur jika diperlukan
             if (canNavigateBack) {
-                IconButton(onClick = navigateUp) {
+                IconButton(onClick = navigateUp) {// Menangani aksi klik tombol mundur
                     Icon(
                         imageVector = Filled.ArrowBack,
                         contentDescription = stringResource(string.back_button)

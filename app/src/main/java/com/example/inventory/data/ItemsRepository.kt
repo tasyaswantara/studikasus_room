@@ -20,3 +20,4 @@ package com.example.inventory.data
  * Repository that provides insert, update, delete, and retrieve of [Item] from a given data source.
  */
 interface ItemsRepository
+//interface yang menyediakan operasi dasar untuk menangani entitas Item, seperti menambah, memperbarui, menghapus, dan mengambil data dari sumber data tertentu.
