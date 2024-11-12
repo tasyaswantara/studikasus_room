@@ -15,6 +15,21 @@
  */
 
 package com.example.inventory.data
+
+import ItemDao
+
 // Kelas OfflineItemsRepository mengimplementasikan interface ItemsRepository
 // untuk menangani data barang yang disimpan secara offline.
-class OfflineItemsRepository : ItemsRepository
+import kotlinx.coroutines.flow.Flow
+
+class OfflineItemsRepository(private val itemDao: ItemDao) : ItemsRepository { // Mendefinisikan kelas dengan itemDao sebagai parameter konstruktor
+    override fun getAllItemsStream(): Flow<List<Item>> = itemDao.getAllItems() // Mendapatkan aliran semua barang dari database
+
+    override fun getItemStream(id: Int): Flow<Item?> = itemDao.getItem(id) // Mendapatkan aliran data barang tertentu berdasarkan ID
+
+    override suspend fun insertItem(item: Item) = itemDao.insert(item) // Menyisipkan data barang baru ke database
+
+    override suspend fun deleteItem(item: Item) = itemDao.delete(item) // Menghapus data barang dari database
+
+    override suspend fun updateItem(item: Item) = itemDao.update(item) // Memperbarui data barang di database
+}

@@ -23,14 +23,15 @@ import com.example.inventory.data.ItemsRepository
 /**
  * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
  */
-class ItemDetailsViewModel(
-    savedStateHandle: SavedStateHandle
-) : ViewModel() {
+class ItemDetailsViewModel( // Deklarasi kelas ViewModel untuk detail item
+    savedStateHandle: SavedStateHandle // Menggunakan SavedStateHandle untuk menyimpan data antar proses
+) : ViewModel() { // Mewarisi dari kelas ViewModel
 
     private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
+    // Mendapatkan itemId dari SavedStateHandle, tidak boleh null
 
-    companion object {
-        private const val TIMEOUT_MILLIS = 5_000L
+    companion object { // Objek pendamping untuk konstanta statis
+        private const val TIMEOUT_MILLIS = 5_000L // Waktu batas dalam milidetik
     }
 }
 
